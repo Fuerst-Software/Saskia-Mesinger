@@ -714,3 +714,30 @@ input:focus,select:focus,textarea:focus{
 }
 .form-legal a{ color: var(--gold-strong); text-decoration:none; }
 .form-legal a:hover{ text-decoration:underline; }
+/* ===========================================================
+   KONTAKT – Datenschutz-Link Gold statt Blau
+=========================================================== */
+
+/* Standard-Link im Kontaktformular */
+.section-contact a,
+.contact-form a,
+.form-note a{
+  color: var(--gold-strong);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+
+/* Hover / Fokus */
+.section-contact a:hover,
+.section-contact a:focus,
+.contact-form a:hover,
+.contact-form a:focus{
+  color: var(--gold-soft);
+  text-shadow: 0 0 6px rgba(255,211,106,.35);
+}
+
+/* Falls Browser Standard-Styles reinfunken */
+.section-contact a:visited{
+  color: var(--gold-strong);
+}
