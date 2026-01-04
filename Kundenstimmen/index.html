@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Kundenstimmen</title>
+  <meta name="description" content="Kundenstimmen und Feedback. Hier werden nach und nach echte Rückmeldungen veröffentlicht." />
+  <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Scroll progress -->
+  <div class="scrollbar" aria-hidden="true">
+    <div class="scrollbar__fill" id="scrollFill"></div>
+  </div>
+
+  <main class="page" id="top">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Seitenkopf">
+      <div class="hero__title">
+        <h1 class="title title--xl">KUNDENSTIMMEN</h1>
+        <div class="wave wave--hero" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--ghost" href="../index.html#top">← Zur Startseite</a>
+      </div>
+    </section>
+
+    <!-- NAV -->
+    <section class="section" id="nav" aria-label="Inhaltsnavigation">
+      <header class="section__head reveal">
+        <p class="kicker">Übersicht</p>
+        <h2 class="title">Feedback & Referenzen</h2>
+      </header>
+
+      
+
+    
+        <!-- Empty State (keine Fake-Stimmen) -->
+        <div class="card empty" id="emptyState">
+          <div class="empty__inner">
+            <div class="empty__badge">Noch keine veröffentlichten Kundenstimmen</div>
+            <div class="prose">
+              <p>
+                Sobald die ersten Rückmeldungen vorliegen, werden sie hier veröffentlicht.
+              </p>
+           
+        </div>
+      </section>
+
+      
+   
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+      <span>© <span id="year"></span> Saskia Mesinger · Virtuelle Assistenz</span>
+      
+      </div>
+
+      <div class="footer__links">
+        <a class="btn btn--mini" href="../index.html#top">Start</a>
+        <a class="btn btn--mini" href="../index.html#impressum">Impressum</a>
+        <a class="btn btn--mini" href="../index.html#datenschutz">Datenschutz</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="../responsive.js" defer></script>
+
+</body>
+</html>
