@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Eventmanagement & Retreat-Organisation – Messen, Firmenfeiern, Sportevents</title>
+  <meta name="description" content="Professionelle Eventorganisation: Messen, Firmenfeiern, Sportevents, Masterclasses und Retreats. Strukturierte Planung und Umsetzung." />
+  <meta name="robots" content="index,follow" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Scroll progress -->
+  <div class="scrollbar" aria-hidden="true"><div class="scrollbar__fill" id="scrollFill"></div></div>
+
+  <main class="page" id="top">
+
+    <!-- HERO / TITLE (keine Nav oben) -->
+    <section class="hero" aria-label="Seitenkopf">
+      <div class="hero__title">
+        <h1 class="title title--xl">EVENTMANAGEMENT</h1>
+        <div class="wave wave--hero" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--ghost" href="../index.html#top">← Zur Startseite</a>
+      </div>
+    </section>
+
+    <!-- QUICK NAV (erst darunter) -->
+    <section class="section" id="nav" aria-label="Inhaltsnavigation">
+      <header class="section__head reveal">
+        <p class="kicker">Navigation</p>
+        <h2 class="title">Wohin möchten Sie?</h2>
+      </header>
+
+      <nav class="navgrid reveal" aria-label="Abschnittsnavigation">
+        <a class="navgrid__btn" href="#service">Mein Service</a>
+        <a class="navgrid__btn" href="#warum">Warum professionell?</a>
+        <a class="navgrid__btn" href="#vorteil">Ihr Vorteil</a>
+        <a class="navgrid__btn" href="#kontakt">Kontakt</a>
+      </nav>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="stack">
+
+      <!-- SERVICE -->
+      <section class="block reveal" id="service">
+        <header class="block__head">
+          <h2 class="title">Mein Service für Ihr Event</h2>
+          <div class="wave" aria-hidden="true"></div>
+        </header>
+
+        <div class="card">
+          <ul class="list">
+            <li>✔ Planung &amp; Organisation: Strukturierte Vorbereitung für reibungslose Abläufe</li>
+            <li>✔ Budgetüberwachung: Kostenkontrolle für maximale Wirtschaftlichkeit</li>
+            <li>✔ Dienstleisterkoordination: Auswahl und Steuerung von Catering, Technik, Location und mehr</li>
+            <li>✔ Zeitmanagement: Präzise Terminplanung für stressfreie Events</li>
+            <li>✔ Internationale Retreat-Organisation: Locationscouting, Reiseplanung, Gästebetreuung und komplette Logistik</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- WARUM -->
+      <section class="block reveal" id="warum">
+        <header class="block__head">
+          <h2 class="title">Warum professionelles Eventmanagement?</h2>
+          <div class="wave" aria-hidden="true"></div>
+        </header>
+
+        <div class="card">
+          <ul class="list list--plain">
+            <li>Effizienz: Sie sparen Zeit und Ressourcen</li>
+            <li>Transparenz: Klare Kostenübersicht und regelmäßige Updates</li>
+            <li>Erfahrung: Organisation von Messen, Firmenfeiern, Sportevents, Masterclasses und Retreats seit über 15 Jahren</li>
+            <li>Flexibilität: Individuelle Konzepte für jedes Budget und jede Zielgruppe</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VORTEIL -->
+      <section class="block reveal" id="vorteil">
+        <header class="block__head">
+          <h2 class="title">Ihr Vorteil</h2>
+          <div class="wave" aria-hidden="true"></div>
+        </header>
+
+        <div class="card">
+          <p class="text">
+            Mit meiner Unterstützung wird Ihr Event professionell geplan… – ob Business-Event,
+            Sportveranstaltung oder Retreat im Ausland.<br>
+            Ich kümmere mich um alle Details, damit Sie sich vollständig auf Ihre Gäste und Inhalte
+            konzentrieren können.
+          </p>
+        </div>
+      </section>
+
+     
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+        <span>© <span id="year"></span> Saskia Mesinger · Virtuelle Assistenz</span>
+      </div>
+      <div class="footer__links">
+        <a class="btn btn--mini" href="../index.html#kontakt">Start</a>
+        <a class="btn btn--mini" href="../index.html#impressum">Impressum</a>
+        <a class="btn btn--mini" href="../index.html#datenschutz">Datenschutz</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Scrollbar
+    const fill = document.getElementById('scrollFill');
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+
+    const onScroll = () => {
+      const h = document.documentElement;
+      const max = (h.scrollHeight - h.clientHeight) || 1;
+      const p = (h.scrollTop / max) * 100;
+      if (fill) fill.style.width = p + '%';
+    };
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+
+    // Reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => e.target.classList.toggle('in', e.isIntersecting));
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+  <script src="script.js"></script>
+  <script src="../responsive.js" defer></script>
+
+</body>
+</html>
