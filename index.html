@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Saskia Mesinger – Virtuelle Assistenz für Immobilien & Projekte</title>
+
+  <!-- Basis-SEO -->
+  <meta name="description" content="Virtuelle Assistenz für Unternehmer und Immobilienprofis. Struktur im Hintergrund für Immobilienverwaltung, Projekte, Backoffice, Buchhaltung und Business-Events – ruhig, diskret, maskulin.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Saskia Mesinger">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Optional Bootstrap (kann bleiben, wird hier nicht zwingend genutzt) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <script src="responsive.js" defer></script>
+  <script src="kontakt.js" defer></script>
+
+
+</head>
+
+<body id="top">
+
+  <!-- Scroll-Bar oben -->
+  <div class="scroll-bar" aria-hidden="true">
+    <div class="scroll-bar__fill"></div>
+  </div>
+
+  <!-- Overlay Navigation -->
+  <nav class="overlay" aria-label="Hauptnavigation" aria-hidden="true">
+    <div class="overlay__inner">
+      <div class="overlay__head">
+        <span class="overlay__label">Navigation</span>
+        <button class="overlay__close" type="button" aria-label="Menü schließen">×</button>
+      </div>
+
+      <ul class="overlay__list">
+        <li><a href="#top" class="overlay__link">Startseite</a></li>
+        <li><a href="kontakt.html" class="overlay__link">Kontakt</a></li>
+        <li><a href="Immobilien/index.html" class="overlay__link">Immobilien</a></li>
+        <li><a href="Erfahrung/index.html" class="overlay__link">Erfahrung</a></li>
+        <li><a href="Buchhaltung/index.html" class="overlay__link">Buchhaltung</a></li>
+        <li><a href="Backoffice/index.html" class="overlay__link">Backoffice</a></li>
+        <li><a href="Kundenstimmen/index.html" class="overlay__link">Kundenstimmen</a></li>         <li><a href="ProjektManagment/index.html" class="overlay__link">Projekt Management</a></li>
+        <li><a href="EventManagment/index.html" class="overlay__link">Event Management</a></li>
+       <li><a href="faq/index.html" class="overlay__link">FAQ</a></li>
+      </ul>
+
+      <p class="overlay__meta">
+        Saskia Mesinger – Virtuelle Assistenz im Hintergrund für Unternehmer &amp; Immobilienprofis.
+        Struktur für Immobilien, Projekte, Backoffice, Buchhaltung &amp; Business-Events.
+      </p>
+    </div>
+  </nav>
+
+  <!-- HEADER (fixed, startet sofort ganz oben) -->
+  <header class="site-header" role="banner">
+    <div class="lux-header-inner">
+
+      <!-- Brand -->
+      <div class="lux-brand">
+        <span class="lux-brand-top">Saskia Mesinger</span>
+        <span class="lux-brand-sub">Virtuelle Assistenz</span>
+      </div>
+
+      <!-- Center Nav (Desktop) -->
+     <nav class="lux-nav" aria-label="Schnellnavigation">
+  <a href="#willkommen">Willkommen</a>
+  <a href="#navigation">Navigation</a>
+  <a href="#kontakt-start">Kontakt</a>
+</nav>
+
+
+      <!-- 3-Dots Menu Button -->
+      <button class="lux-menu-btn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="overlayNav">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <div class="page">
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+
+        <!-- Willkommen (korrekt geschrieben) -->
+        <div class="welcome-inline" id="willkommen">
+          <h1 class="welcome-title" id="hero-title">WILLKOMMEN</h1>
+        </div>
+
+        <!-- Digitale Visitenkarte -->
+        <article class="hero-panel hero-card reveal" data-tilt>
+          <div class="hero-panel__inner hero-card-inner">
+
+            <h2 class="card-name">Saskia Mesinger</h2>
+            <p class="card-role">Virtuelle Assistenz</p>
+
+            <div class="card-divider"></div>
+
+           
+
+            <button class="btn-primary card-btn" type="button" data-scroll-target="#kontakt-start">
+              Kontakt aufnehmen
+            </button>
+          </div>
+
+          <!-- Scroll-Indikator -->
+          <div class="panel-scroll" aria-hidden="true">
+            <span class="panel-scroll__dots"></span>
+            <span class="panel-scroll__label">Scroll</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- QUICK ENTRY -->
+      <section id="navigation" class="section section-quick" aria-label="Navigation">
+  <div class="section-inner">
+
+          <header class="section-head reveal">
+            <p class="section-kicker">Navigation</p>
+            <h2 class="section-title">Wohin möchten Sie?</h2>
+          </header>
+
+          <div class="nav-grid">
+            <a href="#top" class="nav-btn reveal">Start</a>
+            <a href="Erfahrung/index.html" class="nav-btn reveal">Erfahrung</a>
+            <a href="ProjektManagment/index.html" class="nav-btn reveal">Projekt Management</a>
+            <a href="Immobilien/index.html" class="nav-btn reveal">Immobilien</a>
+            <a href="EventManagment/index.html" class="nav-btn reveal">Event Management</a>
+            <a href="Buchhaltung/index.html" class="nav-btn reveal">Buchhaltung</a>
+            <a href="Backoffice/index.html" class="nav-btn reveal">Backoffice</a>
+            <a href="Kundenstimmen/index.html" class="nav-btn reveal">Kundenstimmen</a>
+            <a href="faq/index.html" class="nav-btn reveal">FAQ</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+<section class="section section-contact" id="kontakt-start" aria-label="Kontakt">
+  <div class="section-inner contact-centered">
+
+    <div class="contact-card reveal" data-tilt data-tilt-intensity="strong">
+      <h2 class="contact-title">Kontakt</h2>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <!-- Honeypot (Spam-Schutz) -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Betreff für Mail (Formspree) -->
+        <input type="hidden" name="_subject" value="saskiamesinger.de Kontakt Formular">
+
+        <div class="form-row">
+          <label for="name">Name <span class="req">*</span></label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="Ihr Name"
+            required
+          >
+          <div class="field-error" data-error-for="name">Bitte geben Sie Ihren Namen an.</div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">E-Mail <span class="req">*</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="Ihre geschäftliche E-Mail"
+            required
+          >
+          <div class="field-error" data-error-for="email">Bitte geben Sie eine gültige E-Mail-Adresse an.</div>
+        </div>
+
+        <div class="form-row">
+          <label for="focus">Fokus <span class="req">*</span></label>
+          <select id="focus" name="focus" required>
+            <option value="">Bitte wählen</option>
+            <option value="immobilien">Immobilienverwaltung</option>
+            <option value="projekte">Projekt Management</option>
+            <option value="backoffice">Backoffice &amp; Buchhaltung</option>
+            <option value="events">Business-Events</option>
+            <option value="kombiniert">Mehrere Bereiche</option>
+          </select>
+          <div class="field-error" data-error-for="focus">Bitte wählen Sie einen Fokus aus.</div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Stichpunkte <span class="req">*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Kurz skizzieren, wobei Sie Unterstützung wünschen."
+            required
+          ></textarea>
+          <div class="field-error" data-error-for="message">Bitte geben Sie eine kurze Nachricht ein.</div>
+        </div>
+
+        <!-- DSGVO Einwilligung -->
+        <div class="form-row form-consent">
+          <label class="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            <span>
+              Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden.
+              Weitere Informationen finden Sie in der <a href="datenschutz.html">Datenschutzerklärung</a>.
+              <span class="req">*</span>
+            </span>
+          </label>
+          <div class="field-error" data-error-for="consent">Bitte bestätigen Sie die Einwilligung.</div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-primary--full" id="contactSubmit">
+          Anfrage senden
+        </button>
+
+        <!-- Status-Ausgabe (kontakt.js schreibt hier rein) -->
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+
+        <p class="form-legal">
+          Pflichtfelder sind mit <span class="req">*</span> markiert. Mit dem Absenden akzeptieren Sie unsere
+          <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+          <h3 class="social-title">Social Media</h3>
+
+          <div class="social-buttons">
+            <a class="btn-chip" href="https://wa.me/491234567890" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn-chip" href="https://www.linkedin.com/in/DEIN-LINKEDIN-PROFIL" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn-chip" href="mailto:kontakt@saskia-mesinger.de">E-Mail</a>
+            <a class="btn-chip" href="kontakt.html">Kontaktseite</a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Saskia Mesinger · Virtuelle Assistenz</span>
+
+        <div class="footer-links">
+          <a href="impressum.html" class="footer-btn">Impressum</a>
+          <a href="datenschutz.html" class="footer-btn">Datenschutz</a>
+          <a href="faq.html" class="footer-btn">FAQ</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
