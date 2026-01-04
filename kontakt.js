@@ -8,9 +8,8 @@
 =========================================================== */
 
 (() => {
-  // Formspree Endpoint (nach Erstellung deines Forms)
-  // Beispiel: https://formspree.io/f/abcdwxyz
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/DEIN_FORM_ID";
+  // FINAL: dein Formspree Endpoint
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkogknen";
   const SUBJECT = "saskiamesinger.de Kontakt Formular";
 
   const form = document.getElementById("contactForm");
@@ -19,7 +18,6 @@
   const submitBtn = document.getElementById("contactSubmit") || form.querySelector('button[type="submit"]');
   const noteEl = document.getElementById("formNote") || form.querySelector(".form-note");
 
-  // Feld-Mapper (deine IDs)
   const fields = {
     name: form.querySelector("#name"),
     email: form.querySelector("#email"),
@@ -29,14 +27,12 @@
     honeypot: form.querySelector('input[name="website"]')
   };
 
-  // Error-Elemente: <div class="field-error" data-error-for="name">...</div>
   const errorEl = (key) => form.querySelector(`.field-error[data-error-for="${key}"]`);
 
   const setNote = (text, type = "info") => {
     if (!noteEl) return;
     noteEl.textContent = text;
 
-    // Edle, stabile Styles (ohne zusätzliche CSS Pflicht)
     noteEl.style.opacity = "1";
     noteEl.style.marginTop = "12px";
     noteEl.style.padding = "10px 12px";
@@ -46,12 +42,8 @@
     noteEl.style.color = "var(--text-soft)";
     noteEl.style.textAlign = "center";
 
-    if (type === "success") {
-      noteEl.style.border = "1px solid rgba(255,211,106,.25)";
-    }
-    if (type === "error") {
-      noteEl.style.border = "1px solid rgba(255,120,120,.28)";
-    }
+    if (type === "success") noteEl.style.border = "1px solid rgba(255,211,106,.25)";
+    if (type === "error")   noteEl.style.border = "1px solid rgba(255,120,120,.28)";
   };
 
   const lock = (state) => {
@@ -77,7 +69,6 @@
     if (!input) return;
     input.setAttribute("aria-invalid", invalid ? "true" : "false");
 
-    // Minimaler visueller Hinweis ohne CSS-Änderung
     if (invalid) {
       input.style.borderColor = "rgba(255,120,120,.38)";
       input.style.boxShadow = "0 0 0 1px rgba(255,120,120,.18)";
@@ -89,7 +80,6 @@
 
   const validate = () => {
     hideAllErrors();
-
     let ok = true;
 
     // Name
@@ -97,9 +87,7 @@
       ok = false;
       showError("name");
       markInvalid(fields.name, true);
-    } else {
-      markInvalid(fields.name, false);
-    }
+    } else markInvalid(fields.name, false);
 
     // Email
     const emailVal = fields.email?.value.trim() || "";
@@ -108,33 +96,26 @@
       ok = false;
       showError("email");
       markInvalid(fields.email, true);
-    } else {
-      markInvalid(fields.email, false);
-    }
+    } else markInvalid(fields.email, false);
 
     // Focus
     if (!fields.focus?.value) {
       ok = false;
       showError("focus");
       markInvalid(fields.focus, true);
-    } else {
-      markInvalid(fields.focus, false);
-    }
+    } else markInvalid(fields.focus, false);
 
     // Message
     if (!fields.message?.value.trim()) {
       ok = false;
       showError("message");
       markInvalid(fields.message, true);
-    } else {
-      markInvalid(fields.message, false);
-    }
+    } else markInvalid(fields.message, false);
 
     // Consent
     if (fields.consent && !fields.consent.checked) {
       ok = false;
       showError("consent");
-      // Checkbox style lässt man in Ruhe, aria reicht
       fields.consent.setAttribute("aria-invalid", "true");
     } else if (fields.consent) {
       fields.consent.setAttribute("aria-invalid", "false");
@@ -143,35 +124,25 @@
     return ok;
   };
 
-  // Live-Validation light (optional, aber nice)
   ["name", "email", "focus", "message"].forEach(k => {
     const el = fields[k];
     if (!el) return;
-    el.addEventListener("input", () => {
-      // Nur Fehler zurücknehmen wenn es jetzt ok ist
-      validate();
-    });
-    el.addEventListener("blur", () => validate());
+    el.addEventListener("input", validate);
+    el.addEventListener("blur", validate);
   });
-  if (fields.consent) {
-    fields.consent.addEventListener("change", () => validate());
-  }
+  if (fields.consent) fields.consent.addEventListener("change", validate);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     // Honeypot -> Bot => silently drop
-    if (fields.honeypot && fields.honeypot.value.trim() !== "") {
-      // Kein Hinweis an Bot
-      return;
-    }
+    if (fields.honeypot && fields.honeypot.value.trim() !== "") return;
 
-    // Eigene Validierung (professioneller als reportValidity bei custom errors)
     if (!validate()) {
       setNote("Bitte prüfen Sie die markierten Felder.", "error");
-      // Fokus auf erstes invalid field
       const firstInvalid =
-        ["name", "email", "focus", "message"].map(k => fields[k]).find(el => el?.getAttribute("aria-invalid") === "true");
+        ["name", "email", "focus", "message"].map(k => fields[k])
+          .find(el => el?.getAttribute("aria-invalid") === "true");
       if (firstInvalid) firstInvalid.focus();
       return;
     }
@@ -184,8 +155,7 @@
     // Subject fix
     fd.set("_subject", SUBJECT);
 
-    // Reply-To (damit du in Gmail direkt antworten kannst)
-    // Formspree nutzt je nach Plan/Settings: _replyto
+    // Reply-To (damit du direkt an den Absender antworten kannst)
     fd.set("_replyto", fd.get("email") || "");
 
     try {
@@ -199,8 +169,6 @@
         setNote("Danke! Deine Anfrage ist eingegangen – wir melden uns zeitnah", "success");
         form.reset();
         hideAllErrors();
-
-        // aria-invalid zurücksetzen
         ["name", "email", "focus", "message"].forEach(k => markInvalid(fields[k], false));
         if (fields.consent) fields.consent.setAttribute("aria-invalid", "false");
       } else {
