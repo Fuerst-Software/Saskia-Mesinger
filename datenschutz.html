@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Datenschutzerklärung</title>
+  <meta name="description" content="Datenschutzerklärung gemäß DSGVO." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --navy:#020308;
+      --navy-soft:#040711;
+      --gold:#d4a436;
+      --gold-soft:#f1c75c;
+      --gold-strong:#ffd979;
+      --text-strong:#f7f2eb;
+      --text-soft:#cfc6bb;
+      --text-muted:#8b847c;
+      --radius:22px;
+      --shadow:0 22px 60px rgba(0,0,0,.82);
+      --focus:0 0 0 2px rgba(255,211,106,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: radial-gradient(circle at top, #070a12 0%, #02030a 55%, #010107 100%);
+      color:var(--text-strong);
+      font-family: system-ui,-apple-system,"Segoe UI",Inter,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    a{ color:var(--gold-strong); text-decoration:none; }
+    a:hover{ color:var(--gold-soft); text-shadow:0 0 10px rgba(255,211,106,.18); }
+    a:focus-visible{ outline:none; box-shadow: var(--focus); border-radius:10px; }
+
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 26px 18px 64px;
+    }
+
+    .hero{ padding: 18px 0 18px; text-align:center; }
+
+    .title-xl{
+      margin:0;
+      font-family: "Cormorant Garamond","Times New Roman",serif;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size: clamp(2.2rem, 6vw, 3.9rem);
+      background: linear-gradient(180deg,#fff4cc 0%,#ffd36a 28%,#f0b93a 55%,#c98e14 78%,#ffe7a8 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow: 0 0 10px rgba(255,211,106,.10);
+    }
+
+   
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,211,106,.55);
+      background: rgba(8,10,14,.55);
+      color:var(--text-strong);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      box-shadow: 0 16px 34px rgba(0,0,0,.65);
+      transition: transform .15s ease, border-color .15s ease, filter .15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: var(--gold-strong); filter: brightness(1.06); }
+    .btn--ghost{ background: rgba(2,3,8,.35); color: var(--gold-strong); }
+
+    .stack{ display:flex; flex-direction:column; gap:18px; margin-top: 18px; }
+
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(140deg, rgba(0,0,0,.60), rgba(0,0,0,.92));
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-family: "Cormorant Garamond","Times New Roman",serif;
+      color: var(--gold-strong);
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-weight:600;
+      font-size: 1.35rem;
+    }
+
+    p{ margin: 10px 0; color:var(--text-soft); line-height:1.75; }
+    .muted{ color: var(--text-muted); }
+
+    ul{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    li{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(3,5,10,.55);
+      color: var(--text-soft);
+      line-height:1.65;
+    }
+
+    footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top:1px solid rgba(255,255,255,.14);
+      text-align:center;
+      color: var(--text-muted);
+      font-size:.85rem;
+    }
+    .foot-links{ margin-top:10px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  </style>
+</head>
+
+<body>
+  <main class="page" id="top">
+
+    <section class="hero" aria-label="Seitenkopf">
+      <h1 class="title-xl">Datenschutz</h1>
+      <div class="wave" aria-hidden="true"></div>
+      <div class="actions">
+        <a class="btn btn--ghost" href="index.html#top">← Zur Startseite</a>
+        <a class="btn" href="impressum.html">Impressum</a>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Datenschutzerklärung Inhalte">
+
+      <article class="card">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+          <strong>Virtuelle Assistenz Saskia Mesinger</strong><br>
+          Habichtstraße 40, 86653 Monheim, Deutschland<br>
+          Telefon: +49 170 4049011<br>
+          E-Mail: wird ergänzt
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>2. Allgemeine Hinweise</h2>
+        <p>
+          Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Personenbezogene Daten sind alle Daten,
+          mit denen Sie persönlich identifiziert werden können. Diese Datenschutzerklärung erläutert, welche
+          Daten wir erheben, wofür wir sie nutzen und auf welcher Rechtsgrundlage das erfolgt.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>3. Hosting &amp; Server-Logfiles</h2>
+        <p>
+          Beim Aufruf dieser Website werden durch den Hostinganbieter automatisch Informationen erfasst
+          (sog. Server-Logfiles). Dazu gehören insbesondere IP-Adresse, Datum und Uhrzeit der Anfrage,
+          Browsertyp und -version, Betriebssystem, Referrer-URL sowie der Name der abgerufenen Datei.
+        </p>
+        <p>
+          <strong>Zweck</strong>: Sicherstellung eines stabilen und sicheren Betriebs (z. B. zur Abwehr von Angriffen).<br>
+          <strong>Rechtsgrundlage</strong>: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).<br>
+          Die Logdaten werden regelmäßig gelöscht, sobald sie für den Zweck nicht mehr erforderlich sind.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>4. Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie uns per E-Mail oder über ein Kontaktformular kontaktieren, verarbeiten wir die von Ihnen
+          übermittelten Daten (z. B. Name, E-Mail-Adresse, Nachricht), um Ihre Anfrage zu bearbeiten.
+        </p>
+        <p>
+          <strong>Rechtsgrundlage</strong>: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen/Vertrag) und
+          Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effizienter Kommunikation).
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>5. Kontaktformular-Dienst (Formspree)</h2>
+        <p>
+          Für den Versand von Kontaktformularanfragen kann der Dienst <strong>Formspree</strong> eingesetzt werden.
+          Dabei werden die im Formular eingegebenen Daten an Formspree übertragen und zur Zustellung der Anfrage verarbeitet.
+        </p>
+        <p>
+          <strong>Zweck</strong>: Bereitstellung eines funktionsfähigen Kontaktformularversands.<br>
+          <strong>Rechtsgrundlage</strong>: Art. 6 Abs. 1 lit. b DSGVO (Anbahnung/Kommunikation) bzw. Art. 6 Abs. 1 lit. f DSGVO.<br>
+          <strong>Hinweis Drittland</strong>: Je nach Anbieterinfrastruktur kann eine Verarbeitung außerhalb der EU nicht ausgeschlossen sein.
+          In diesem Fall erfolgt die Übermittlung auf Basis geeigneter Garantien (z. B. EU-Standardvertragsklauseln), sofern vom Anbieter bereitgestellt.
+        </p>
+        <p class="muted">
+          Wenn du Formspree später nicht mehr nutzt oder der Provider wechselt, muss dieser Abschnitt angepasst werden.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>6. Cookies / Tracking</h2>
+        <p>
+          Auf dieser Website werden, sofern nicht ausdrücklich anders beschrieben, keine Analyse- oder Trackingtools eingesetzt.
+          Technisch notwendige Cookies können je nach Hosting/Plattform verwendet werden, um die grundlegende Funktionalität bereitzustellen.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>7. Ihre Rechte</h2>
+        <ul>
+          <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
+          <li><strong>Berichtigung</strong> (Art. 16 DSGVO)</li>
+          <li><strong>Löschung</strong> (Art. 17 DSGVO)</li>
+          <li><strong>Einschränkung</strong> (Art. 18 DSGVO)</li>
+          <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+          <li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li>
+          <li><strong>Widerruf</strong> erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
+          <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>8. Datenminimierung &amp; Speicherdauer</h2>
+        <p>
+          Wir verarbeiten nur solche personenbezogenen Daten, die für die genannten Zwecke erforderlich sind.
+          Daten werden gelöscht, sobald der Zweck entfällt und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>9. Sicherheit</h2>
+        <p>
+          Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche
+          Manipulationen, teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter zu schützen.
+        </p>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Virtuelle Assistenz Saskia Mesinger</div>
+      <div class="muted">Website erstellt durch <strong>Fürst Software &amp; Web Development</strong></div>
+      <div class="foot-links">
+        <a class="btn btn--ghost" href="index.html#top">Start</a>
+        <a class="btn btn--ghost" href="impressum.html">Impressum</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Impressum</title>
+  <meta name="description" content="Impressum gemäß § 5 TMG." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --navy:#020308;
+      --navy-soft:#040711;
+      --gold:#d4a436;
+      --gold-soft:#f1c75c;
+      --gold-strong:#ffd979;
+      --text-strong:#f7f2eb;
+      --text-soft:#cfc6bb;
+      --text-muted:#8b847c;
+      --radius:22px;
+      --shadow:0 22px 60px rgba(0,0,0,.82);
+      --border:1px solid rgba(255,211,106,.22);
+      --focus:0 0 0 2px rgba(255,211,106,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      background: radial-gradient(circle at top, #070a12 0%, #02030a 55%, #010107 100%);
+      color:var(--text-strong);
+      font-family: system-ui,-apple-system,"Segoe UI",Inter,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    a{ color:var(--gold-strong); text-decoration:none; }
+    a:hover{ color:var(--gold-soft); text-shadow:0 0 10px rgba(255,211,106,.18); }
+    a:focus-visible{ outline:none; box-shadow: var(--focus); border-radius:10px; }
+
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 26px 18px 64px;
+    }
+
+    .hero{
+      padding: 18px 0 18px;
+      text-align:center;
+    }
+
+    .title-xl{
+      margin:0;
+      font-family: "Cormorant Garamond","Times New Roman",serif;
+      font-weight:600;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size: clamp(2.4rem, 6vw, 4.1rem);
+      background: linear-gradient(180deg,#fff4cc 0%,#ffd36a 28%,#f0b93a 55%,#c98e14 78%,#ffe7a8 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow: 0 0 10px rgba(255,211,106,.10);
+    }
+
+   
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,211,106,.55);
+      background: rgba(8,10,14,.55);
+      color:var(--text-strong);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      box-shadow: 0 16px 34px rgba(0,0,0,.65);
+      transition: transform .15s ease, border-color .15s ease, filter .15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: var(--gold-strong); filter: brightness(1.06); }
+    .btn--ghost{ background: rgba(2,3,8,.35); color: var(--gold-strong); }
+
+    .stack{ display:flex; flex-direction:column; gap:18px; margin-top: 18px; }
+
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(140deg, rgba(0,0,0,.60), rgba(0,0,0,.92));
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+      overflow:hidden;
+    }
+
+    h2{
+      margin:0 0 10px;
+      font-family: "Cormorant Garamond","Times New Roman",serif;
+      color: var(--gold-strong);
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-weight:600;
+      font-size: 1.45rem;
+    }
+
+    p{ margin: 10px 0; color:var(--text-soft); line-height:1.75; }
+    .muted{ color: var(--text-muted); }
+
+    .kv{
+      display:grid;
+      grid-template-columns: 180px 1fr;
+      gap: 8px 14px;
+      margin-top: 10px;
+    }
+    .k{ color: var(--text-muted); text-transform:uppercase; letter-spacing:.12em; font-size:.74rem; }
+    .v{ color: var(--text-soft); line-height:1.6; }
+
+    @media (max-width:700px){
+      .kv{ grid-template-columns: 1fr; }
+    }
+
+    footer{
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top:1px solid rgba(255,255,255,.14);
+      text-align:center;
+      color: var(--text-muted);
+      font-size:.85rem;
+    }
+    .foot-links{ margin-top:10px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  </style>
+</head>
+
+<body>
+  <main class="page" id="top">
+
+    <section class="hero" aria-label="Seitenkopf">
+      <h1 class="title-xl">Impressum</h1>
+      <div class="wave" aria-hidden="true"></div>
+      <div class="actions">
+        <a class="btn btn--ghost" href="index.html#top">← Zur Startseite</a>
+        <a class="btn" href="datenschutz.html">Datenschutz</a>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Impressum Inhalte">
+
+      <article class="card">
+        <h2>Angaben gemäß § 5 TMG</h2>
+
+        <div class="kv" role="list">
+          <div class="k" role="listitem">Anbieter</div>
+          <div class="v"><strong>Virtuelle Assistenz Saskia Mesinger</strong> (Einzelunternehmen)</div>
+
+          <div class="k" role="listitem">Inhaberin</div>
+          <div class="v">Saskia Mesinger</div>
+
+          <div class="k" role="listitem">Anschrift</div>
+          <div class="v">Habichtstraße 40, 86653 Monheim, Deutschland</div>
+
+          <div class="k" role="listitem">Telefon</div>
+          <div class="v">+49 170 4049011</div>
+
+          <div class="k" role="listitem">E-Mail</div>
+          <div class="v">wird ergänzt</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Steuerliche Angaben</h2>
+        <div class="kv" role="list">
+          <div class="k" role="listitem">USt-IdNr.</div>
+          <div class="v">DE452022865</div>
+
+          <div class="k" role="listitem">Steuernummer</div>
+          <div class="v">62054984735</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Zuständige Kammer</h2>
+        <p>IHK Augsburg</p>
+      </article>
+
+      <article class="card">
+        <h2>Haftungsausschluss</h2>
+
+        <p><strong>Haftung für Inhalte</strong><br>
+          Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
+          Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+        </p>
+
+        <p><strong>Haftung für Links</strong><br>
+          Diese Website enthält ggf. Links zu externen Websites Dritter. Auf deren Inhalte besteht kein Einfluss; deshalb wird
+          für diese fremden Inhalte keine Gewähr übernommen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+          Anbieter oder Betreiber verantwortlich.
+        </p>
+
+        <p><strong>Urheberrecht</strong><br>
+          Die durch die Betreiberin erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen
+          Zustimmung der jeweiligen Urheberin.
+        </p>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Virtuelle Assistenz Saskia Mesinger</div>
+      <div class="muted">Website erstellt durch <strong>Fürst Software &amp; Web Development</strong></div>
+      <div class="foot-links">
+        <a class="btn btn--ghost" href="index.html#top">Start</a>
+        <a class="btn btn--ghost" href="datenschutz.html">Datenschutz</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
