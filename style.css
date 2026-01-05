@@ -741,3 +741,86 @@ input:focus,select:focus,textarea:focus{
 .section-contact a:visited{
   color: var(--gold-strong);
 }
+/* ===========================================================
+   STARTSEITE – Footer: mehr Luft + Buttons nicht am Rand klebend
+   (einfach ans ENDE deiner style.css)
+=========================================================== */
+
+/* Footer insgesamt: mehr Abstand nach oben & unten */
+.site-footer{
+  margin-top: clamp(42px, 6vw, 70px) !important;
+  padding: 22px 0 34px !important;
+}
+
+/* Innenlayout: vertikal mehr Luft */
+.footer-inner{
+  padding: 0 18px;
+  row-gap: 14px;
+}
+
+/* Footer-Links: Abstand zum unteren Rand + zentrierte Optik */
+.footer-links{
+  margin-top: 6px;
+  padding-bottom: 10px;          /* das ist der "nicht kleben"-Effekt */
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+/* Mobile: Buttons mittig und mehr Luft */
+@media (max-width: 720px){
+  .footer-inner{
+    justify-content:center;
+    text-align:center;
+  }
+  .footer-links{
+    justify-content:center;
+    padding-bottom: 14px;
+  }
+}
+
+/* Optional: kleine, edle Trennlinie etwas weiter weg vom Rand */
+.site-footer{
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+/* ===========================================================
+   FOOTER – Credits / Website erstellt durch
+=========================================================== */
+
+.footer-credits{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:.78rem;
+  color: var(--text-muted);
+  letter-spacing:.04em;
+}
+
+/* Credit-Zeile */
+.site-credit{
+  font-size:.72rem;
+  color: var(--text-muted);
+}
+
+/* Link-Styling */
+.site-credit a{
+  color: var(--gold-strong);
+  text-decoration:none;
+  transition: color .2s ease, text-shadow .2s ease;
+}
+
+/* Hover / Fokus */
+.site-credit a:hover,
+.site-credit a:focus{
+  color: var(--gold-soft);
+  text-shadow: 0 0 6px rgba(255,211,106,.35);
+}
+
+/* Mobile: alles schön zentriert */
+@media (max-width: 720px){
+  .footer-credits{
+    text-align:center;
+    align-items:center;
+  }
+}
