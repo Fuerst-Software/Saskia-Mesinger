@@ -126,3 +126,109 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Danke! Deine Anfrage ist eingegangen – wir melden uns zeitnah");
   });
 });
+/* ===========================================================
+   Goldschweif – dezente Maus-Interaktion (Parallax)
+   (ans Ende von script.js)
+=========================================================== */
+(() => {
+  const wrap = document.querySelector('.welcome-inline');
+  if (!wrap) return;
+
+  // Respect Reduced Motion
+  const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduce) return;
+
+  let targetX = 0, targetY = 0, targetR = 0;
+  let curX = 0, curY = 0, curR = 0;
+  let raf = null;
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+  const update = () => {
+    // sanftes easing
+    curX += (targetX - curX) * 0.08;
+    curY += (targetY - curY) * 0.08;
+    curR += (targetR - curR) * 0.08;
+
+    wrap.style.setProperty('--swirl-x', `${curX.toFixed(2)}px`);
+    wrap.style.setProperty('--swirl-y', `${curY.toFixed(2)}px`);
+    wrap.style.setProperty('--swirl-r', `${curR.toFixed(3)}deg`);
+
+    raf = requestAnimationFrame(update);
+  };
+
+  const onMove = (clientX, clientY) => {
+    const r = wrap.getBoundingClientRect();
+    const nx = (clientX - (r.left + r.width / 2)) / (r.width / 2);   // -1..1
+    const ny = (clientY - (r.top + r.height / 2)) / (r.height / 2);  // -1..1
+
+    // STUFE: sehr dezent (edler)
+    targetX = clamp(nx * 14, -14, 14);   // px
+    targetY = clamp(ny * 6, -6, 6);      // px
+    targetR = clamp(nx * 0.9, -0.9, 0.9);// deg
+  };
+
+  // Start loop once
+  raf = requestAnimationFrame(update);
+
+  // Maus
+  window.addEventListener('mousemove', (e) => onMove(e.clientX, e.clientY), { passive: true });
+
+  // Touch: minimal reagieren (Fingerbewegung)
+  window.addEventListener('touchmove', (e) => {
+    if (!e.touches || !e.touches.length) return;
+    const t = e.touches[0];
+    onMove(t.clientX, t.clientY);
+  }, { passive: true });
+
+  // Wenn Maus raus: zurück zur Mitte
+  window.addEventListener('mouseleave', () => {
+    targetX = 0; targetY = 0; targetR = 0;
+  });
+
+  // Safety: falls Seite hidden -> CPU sparen
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (raf) cancelAnimationFrame(raf);
+      raf = null;
+    } else if (!raf) {
+      raf = requestAnimationFrame(update);
+    }
+  });
+})();
+(() => {
+  const banner = document.getElementById("cookieBanner");
+  if (!banner) return;
+
+  const accept = document.getElementById("cookieAccept");
+  const decline = document.getElementById("cookieDecline");
+
+  const decision = localStorage.getItem("cookieConsent");
+
+  if (!decision) {
+    banner.style.display = "block";
+  }
+
+  accept.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.remove();
+    loadAnalytics();
+  });
+
+  decline.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "declined");
+    banner.remove();
+  });
+
+  function loadAnalytics(){
+    // HIER später Google Analytics / Plausible / etc. laden
+    // Beispiel:
+    // const s = document.createElement("script");
+    // s.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXX";
+    // document.head.appendChild(s);
+  }
+
+  if (decision === "accepted") {
+    loadAnalytics();
+  }
+})();
