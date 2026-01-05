@@ -824,3 +824,76 @@ input:focus,select:focus,textarea:focus{
     align-items:center;
   }
 }
+/* ===========================================================
+   HERO – Goldschweif edel integriert + dezente Wellenbewegung
+   (nur CSS, kein neues Bild)
+=========================================================== */
+
+.welcome-inline{
+  position:relative;
+  isolation:isolate; /* sauberes Blending */
+  overflow:hidden;   /* verhindert harte Kanten */
+}
+
+/* Schweif: integriert, weich, luxuriös */
+.welcome-inline::before{
+  content:"";
+  position:absolute;
+  left:-8%;
+  right:-8%;
+  top:50%;
+  transform: translateY(-50%);
+  height: clamp(90px, 9vw, 150px);
+
+  background: url("../img/goldfloww.png") center / 100% 100% no-repeat;
+
+  opacity:.26; /* edel, nicht „laut“ */
+  filter: blur(.35px) saturate(1.10) contrast(1.06);
+  mix-blend-mode: screen;
+  pointer-events:none;
+  z-index:1;
+
+  /* Wellenbewegung */
+  animation: goldwave 9.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Title bleibt clean, keine Glow-Orgie */
+.welcome-title{
+  position:relative;
+  z-index:2;
+  text-shadow: 0 0 10px rgba(255,211,106,.10);
+}
+
+/* Sehr dezente „Welle“: minimaler Shift + minimale Skalierung */
+@keyframes goldwave{
+  0%{
+    transform: translateY(-50%) translateX(0) scaleY(1);
+    opacity:.24;
+  }
+  35%{
+    transform: translateY(calc(-50% - 2px)) translateX(10px) scaleY(1.04);
+    opacity:.28;
+  }
+  70%{
+    transform: translateY(calc(-50% + 2px)) translateX(-8px) scaleY(0.98);
+    opacity:.25;
+  }
+  100%{
+    transform: translateY(-50%) translateX(0) scaleY(1);
+    opacity:.24;
+  }
+}
+
+/* Mobile: noch kontrollierter */
+@media (max-width: 680px){
+  .welcome-inline::before{
+    opacity:.22;
+    animation-duration: 11.5s;
+  }
+}
+
+/* Accessibility: Reduced Motion respektieren */
+@media (prefers-reduced-motion: reduce){
+  .welcome-inline::before{ animation: none !important; }
+}
