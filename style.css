@@ -295,7 +295,7 @@ h1,h2,h3,
   pointer-events:none;
   z-index:1;
 
-  background: url("img/goldfloww.png") center center / 100% 100% no-repeat;
+  background: url("goldfloww.png") center center / 100% 100% no-repeat;
   opacity:.22;
   filter: blur(.35px) saturate(1.15) contrast(1.06);
   mix-blend-mode: screen;
@@ -969,3 +969,4 @@ input:focus,select:focus,textarea:focus{
     transform: scale(0.95) translateY(-3vh);
   }
 }
+
