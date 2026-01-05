@@ -281,5 +281,42 @@
 
   </div>
 
+
+  <!-- COOKIE BANNER -->
+<div id="cookieBanner" style="
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 960px;
+  width: calc(100% - 32px);
+  background: rgba(5,7,12,.95);
+  border: 1px solid rgba(214,178,94,.28);
+  border-radius: 18px;
+  padding: 18px 22px;
+  z-index: 9999;
+  display: none;
+">
+
+  <p style="
+    margin: 0 0 14px;
+    font-size: .9rem;
+    opacity: .9;
+  ">
+    Diese Website verwendet Cookies für statistische Analysezwecke.
+    Weitere Informationen finden Sie in der
+    <a href="cookies.html" style="color:#d6b25e;">Cookie-Richtlinie</a>.
+  </p>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap;">
+    <button id="cookieAccept" class="btn-primary">
+      Akzeptieren
+    </button>
+    <button id="cookieDecline" class="btn-primary btn-primary--ghost">
+      Ablehnen
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
