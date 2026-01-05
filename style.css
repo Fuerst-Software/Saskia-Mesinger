@@ -897,3 +897,75 @@ input:focus,select:focus,textarea:focus{
 @media (prefers-reduced-motion: reduce){
   .welcome-inline::before{ animation: none !important; }
 }
+/* ===========================================================
+   OVERLAY NAV – echtes Rauszoomen (Zoom-Out Look)
+=========================================================== */
+
+/* gesamtes Overlay leicht verkleinern */
+.overlay__inner{
+  transform: scale(0.88);                 /* 🔑 DAS ist der Zoom-Out */
+  transform-origin: center center;
+  max-width: 1200px;                      /* enger = mehr Luft außen */
+  margin: 0 auto;
+}
+
+/* Liste etwas weiter nach unten, damit es luftig bleibt */
+.overlay__list{
+  margin-top: 72px;
+  gap: 22px;
+}
+
+/* Typo minimal feiner → wirkt weiter entfernt */
+.overlay__link{
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  letter-spacing: .26em;
+  line-height: 1.6;
+  opacity: .92;
+}
+
+/* Navigation-Label dezenter */
+.overlay__label{
+  font-size: .7rem;
+  letter-spacing: .38em;
+  opacity: .6;
+}
+
+/* Close-Button optisch mit skaliert */
+.overlay__close{
+  transform: scale(0.92);
+}
+
+/* Desktop: noch eleganter */
+@media (min-width: 1200px){
+  .overlay__inner{
+    transform: scale(0.85);
+  }
+}
+
+/* Mobile: weniger stark zoomen */
+@media (max-width: 680px){
+  .overlay__inner{
+    transform: scale(0.95);
+  }
+}
+/* ===========================================================
+   OVERLAY NAV – feine Vertikal-Positionierung (nach oben)
+=========================================================== */
+
+.overlay__inner{
+  transform: scale(0.88) translateY(-6vh); /* 🔑 etwas nach oben */
+}
+
+/* Desktop etwas stärker */
+@media (min-width: 1200px){
+  .overlay__inner{
+    transform: scale(0.85) translateY(-8vh);
+  }
+}
+
+/* Mobile sehr dezent */
+@media (max-width: 680px){
+  .overlay__inner{
+    transform: scale(0.95) translateY(-3vh);
+  }
+}
