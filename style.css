@@ -969,12 +969,6 @@ input:focus,select:focus,textarea:focus{
     transform: scale(0.95) translateY(-3vh);
   }
 }
-
-
-/* =========================================================
-   GOLD FLOW BACKGROUND – GITHUB PAGES SAFE FIX
-   ========================================================= */
-
 .hero-section::before {
   content: "";
   position: absolute;
@@ -982,14 +976,9 @@ input:focus,select:focus,textarea:focus{
   z-index: 1;
   pointer-events: none;
 
-  /* 1️⃣ GitHub Pages absolut */
-  background-image: url("/fuerst-software/goldfloww.png"),
-                    /* 2️⃣ Fallback lokal */
-                    url("../goldfloww.png"),
-                    url("./goldfloww.png");
-
+  background-image: url("/fuerst-software/img/goldfloww.png");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   opacity: 0.55;
 }
